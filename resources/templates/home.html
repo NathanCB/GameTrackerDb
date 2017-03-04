@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<form action="/create-game" method="post">
+    <input type="text" placeholder="Game name" name="gameName" width="200" />
+    <select name="gameGenre">
+        <option selected disabled>Genre</option>
+        <option value="adventure">Adventure</option>
+        <option value="rpg">RPG</option>
+        <option value="strategy">Strategry</option>
+        <option value="shooter">Shooter</option>
+    </select>
+    <select name="gamePlatform">
+        <option selected disabled>Platform</option>
+        <option value="pc">PC</option>
+        <option value="ps4">PS4</option>
+        <option value="xbox">XBox</option>
+        <option value="wiiu">Wii U</option>
+    </select>
+    <input type="number" placeholder="Release Year" name="gameYear" />
+
+    <button type="submit">Submit</button>
+</form>
+
+<form action="/edit-game" method="post">
+    <input type="number" placeholder="input number of the game to edit" name="editNumber" />
+    <input type="text" placeholder="Game name" name="gameName" width="200" />
+    <select name="gameGenre">
+        <option selected disabled>Genre</option>
+        <option value="adventure">Adventure</option>
+        <option value="rpg">RPG</option>
+        <option value="strategy">Strategry</option>
+        <option value="shooter">Shooter</option>
+
+    </select>
+    <select name="gamePlatform">
+        <option selected disabled>Platform</option>
+        <option value="pc">PC</option>
+        <option value="ps4">PS4</option>
+        <option value="xbox">XBox</option>
+        <option value="wiiu">Wii U</option>
+    </select>
+    <input type="number" placeholder="Release Year" name="gameYear" />
+
+    <button type="submit">Submit</button>
+</form>
+
+<form action="/delete-game" method="post">
+    <input type="number" placeholder="Delete Game by Number" name="editNumber" />
+    <button type="submit">Submit</button>
+</form>
+
+<ul>
+    {{#games}}
+    {{id}} - {{gameName}} - {{gameGenre}} - {{gamePlatform}} - {{gameYear}}
+    {{/games}}
+</ul>
+</body>
+</html>
